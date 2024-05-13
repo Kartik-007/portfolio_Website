@@ -1,51 +1,3 @@
-// import 'dart:async';
-// import 'package:flutter/material.dart';
-
-// class TypewriterText extends StatefulWidget {
-//   final String text;
-//   final TextStyle textStyle;
-
-//   const TypewriterText({Key? key, required this.text, required this.textStyle}) : super(key: key);
-
-//   @override
-//   _TypewriterTextState createState() => _TypewriterTextState();
-// }
-
-// class _TypewriterTextState extends State<TypewriterText> with SingleTickerProviderStateMixin {
-//   late final AnimationController _controller;
-//   late final Animation<int> _animation;
-
-//   @override
-//   void initState() {
-//     super.initState();
-//     _controller = AnimationController(
-//       duration: Duration(milliseconds: widget.text.length * 150), // Adjust typing speed here
-//       vsync: this,
-//     );
-
-//     _animation = IntTween(begin: 0, end: widget.text.length).animate(_controller)
-//       ..addListener(() {
-//         setState(() {});
-//       });
-
-//     _controller.forward();
-//   }
-
-//   @override
-//   void dispose() {
-//     _controller.dispose();
-//     super.dispose();
-//   }
-
-//   @override
-//   Widget build(BuildContext context) {
-//     final String textToShow = widget.text.substring(0, _animation.value);
-//     return Text(
-//       textToShow,
-//       style: widget.textStyle,
-//     );
-//   }
-// }
 
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -61,9 +13,9 @@ class _CustomTypewriterTextState extends State<CustomTypewriterText>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _animation;
-  final String _text1 = "Welcome to ";
-  final String _text2 = "SLAPP";
-  final String _text3 = " Dev!";
+  final String _text1 = "Hello, ";
+  final String _text2 = "Kartik";
+  final String _text3 = " here!";
 
   @override
   void initState() {

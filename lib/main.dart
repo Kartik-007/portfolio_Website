@@ -5,10 +5,73 @@ import 'custom_card.dart'; // Import the custom card widget
 import 'package:lottie/lottie.dart';
 import 'blink.dart';
 import 'type_writer.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 void main() {
   runApp(PortfolioApp());
 }
+
+List<CustomCard> projects = [
+  const CustomCard(
+    title: 'Reacto',
+    description:
+        "A mobile game designed to test and improve players' reaction times.",
+    imagePath: "assets/images/reacto.png",
+    technologies: ["Flutter", "Google Admob"],
+    projectUrl: 'https://reacto.site/',
+  ),
+  const CustomCard(
+    title: 'Fitness Ai',
+    description:
+        "A fitness app utilizing Chat GPT 4 to curate workout and meal plans based on user inputs.",
+    imagePath: "assets/images/fitness.png",
+    technologies: ["OpenAi", "Flutter", "Firebase"],
+    projectUrl: '',
+  ),
+
+  const CustomCard(
+    title: 'Fitness Ai',
+    description:
+        "A fitness app utilizing Chat GPT 4 puts. Featuring a firebase login, it adapts according to user progress",
+    imagePath: "assets/images/fitness.png",
+    technologies: ["OpenAi", "Flutter", "Firebase"],
+    projectUrl: '',
+  ),
+
+  const CustomCard(
+    title: 'PDF Ai',
+    description:
+        "The project aims y multiple PDF documents simultaneously, enabling a conversational interface for document interaction.",
+    imagePath: "assets/images/pdf.png",
+    technologies: ["OpenAi", "Flutter", "Pinecone"],
+    projectUrl: 'https://github.com/Aman-Kothari7/pdf_AI_Flutter_Langchain',
+  ),
+
+  const CustomCard(
+    title: 'RAG system-FastAPI',
+    description:
+        "Uses PI to create a responsive and informative query system.",
+    imagePath: "assets/images/rbi.png",
+    technologies: ["OpenAi", "Fast API", "Python"],
+    projectUrl: 'https://github.com/Aman-Kothari7/RAGsystem-FastAPI',
+  ),
+
+  const CustomCard(
+    title: 'Learning Path Ai',
+    description:
+        "Harnesses LLMs to curate personal learning paths on a particular topic according to user preferences and goals",
+    imagePath: "assets/images/learn.png",
+    technologies: [
+      "OpenAi",
+      "Flutter",
+      "Firebase",
+    ],
+    projectUrl:
+        'https://github.com/Aman-Kothari7/learning_path_ai_applied_LLM_Application',
+  ),
+
+  // Add more projects as needed
+];
 
 class PortfolioApp extends StatelessWidget {
   @override
@@ -17,23 +80,34 @@ class PortfolioApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Color.fromARGB(255, 11, 25, 47),
-        // appBar: AppBar(
-        //   title: Text('My Portfolio'),
-        //   actions: [
-        //     IconButton(
-        //       icon: Icon(Icons.email),
-        //       onPressed: () {
-        //         showAboutDialog(context: context);
-        //       },
-        //     ),
-        //     // IconButton(
-        //     //   icon: Icon(Icons.code),
-        //     //   onPressed: () {
-        //     //     // Handle GitHub action
-        //     //   },
-        //     // ),
-        //   ],
-        // ),
+        appBar: AppBar(
+          backgroundColor: Color.fromARGB(255, 11, 25, 47),
+          title: Text('My Portfolio',
+              style: TextStyle(color: Color.fromARGB(255, 204, 214, 246))),
+          actions: [
+            IconButton(
+              icon:
+                  Icon(Icons.email, color: Color.fromARGB(255, 204, 214, 246)),
+              onPressed: () {
+                launchUrl(Uri.parse('mailto:your-email@example.com'));
+              },
+            ),
+            IconButton(
+              icon: Icon(Icons.account_circle,
+                  color: Color.fromARGB(255, 204, 214, 246)),
+              onPressed: () {
+                launchUrl(
+                    Uri.parse('https://www.linkedin.com/in/your-linkedin/'));
+              },
+            ),
+            IconButton(
+              icon: Icon(Icons.code, color: Color.fromARGB(255, 204, 214, 246)),
+              onPressed: () {
+                launchUrl(Uri.parse('https://github.com/your-github/'));
+              },
+            ),
+          ],
+        ),
         body: SingleChildScrollView(
           child: Column(
             children: <Widget>[
@@ -59,114 +133,56 @@ class PortfolioApp extends StatelessWidget {
               ),
 
               Padding(
-                padding: EdgeInsets.all(30),
+                padding: EdgeInsets.all(10),
                 child: FittedBox(
                   child: ConstrainedBox(
                       constraints: const BoxConstraints(maxWidth: 700),
                       child: const Text(
                         textAlign: TextAlign.center,
-                        "Leading provider of cutting-edge technologies and services, offering scalable software solutions for businesses of all sizes.",
+                        "I am a dynamic Computer Science graduate from the University of Illinois, passionate about leveraging innovative technologies to make a significant impact on humanity. Committed to continuous learning, I thrive on engaging with new ideas and contributing positively to the global tech community.",
                         style: TextStyle(
+                            height: 2,
                             color: Color.fromARGB(255, 136, 146, 175),
-                            fontSize: 30),
+                            fontSize: 20),
                       )),
                 ),
               ),
               const SizedBox(height: 50),
-              const CustomCard(
-                title: 'Reacto',
-                description:
-                    "A mobile game designed to test and improve players' reaction times. The game consists of four thrilling mini-games that challenge your speed and precision.",
-                imagePath: "assets/images/reacto.png",
-                technologies: [
-                  "Flutter",
-                  "Google Admob",
-                ],
-                projectUrl: 'https://reacto.site/',
-              ),
-              const SizedBox(height: 50),
-              const CustomCard(
-                title: 'Fitness Ai',
-                description:
-                    "A fitness app utilizing Chat GPT 4 to curate workout and meal plans based on user inputs. Featuring a firebase login, it adapts according to user progress",
-                imagePath: "assets/images/fitness.png",
-                technologies: ["OpenAi", "Flutter", "Firebase"],
-                projectUrl: '',
-              ),
-              const SizedBox(height: 50),
-              const CustomCard(
-                title: 'PDF Ai',
-                description:
-                    "The project aims to provide users with an interactive platform to query multiple PDF documents simultaneously, enabling a conversational interface for document interaction.",
-                imagePath: "assets/images/pdf.png",
-                technologies: ["OpenAi", "Flutter", "Pinecone", "Langchain"],
-                projectUrl:
-                    'https://github.com/Aman-Kothari7/pdf_AI_Flutter_Langchain',
-              ),
-              const SizedBox(height: 50),
-              const CustomCard(
-                title: 'RAG system-FastAPI',
-                description:
-                    "Uses RAG system specifically designed to query RBI notifications. It leverages the LLaMA index and FastAPI to create a responsive and informative query system.",
-                imagePath: "assets/images/rbi.png",
-                technologies: ["OpenAi", "Fast API", "Python", "LlamaIndex"],
-                projectUrl:
-                    'https://github.com/Aman-Kothari7/RAGsystem-FastAPI',
-              ),
-              const SizedBox(height: 50),
-              const CustomCard(
-                title: 'Learning Path Ai',
-                description:
-                    "Harnesses LLMs to curate personal learning paths on a particular topic according to user preferences and goals",
-                imagePath: "assets/images/learn.png",
-                technologies: [
-                  "OpenAi",
-                  "Flutter",
-                  "Firebase",
-                ],
-                projectUrl:
-                    'https://github.com/Aman-Kothari7/learning_path_ai_applied_LLM_Application',
-              ),
-              const SizedBox(height: 50),
-              const CustomCard(
-                title: 'AI ChatBot',
-                description:
-                    "Advanced chatbot customer service agent focusing on web data. It employs NLP techniques, machine learning models, and integrates with LlamaIndex for efficient data handling and query processing.",
-                imagePath: "assets/images/ai_chatbot.png",
-                technologies: [
-                  "Python",
-                  "LlamaIndex",
-                  "Langchain",
-                ],
-                projectUrl:
-                    'https://github.com/Aman-Kothari7/Generative-AI-Chatbot_Web-scraped-data',
-              ),
-              const SizedBox(height: 50),
-              const CustomCard(
-                title: 'Habit Tracker',
-                description:
-                    "The app aims to facilitate users in breaking bad habits and forming new ones. It features a to-do list that users must complete daily.",
-                imagePath: "assets/images/habit_tracker.png",
-                technologies: [
-                  "Flutter",
-                  "HIVE DB",
-                ],
-                projectUrl:
-                    'https://play.google.com/store/apps/details?id=com.slapp.makeandbreak',
-              ),
-              const SizedBox(height: 50),
-              const CustomCard(
-                title: 'TestGen AI',
-                description:
-                    "This project employs a combination of natural language processing and machine learning techniques to extract keywords, generate questions, and create distractors for quizzes.",
-                imagePath: "assets/images/test_gen.png",
-                technologies: [
-                  "Python",
-                  "Java Script",
-                ],
-                projectUrl: 'https://github.com/Aman-Kothari7/TestGen.ai',
+
+              Container(
+                alignment: Alignment.centerLeft,
+                padding: const EdgeInsets.only(
+                    left: 250,
+                    bottom: 50,
+                    top: 200), // Adjust padding as needed
+                child: Text(
+                  '/projects',
+                  style: TextStyle(
+                    color: Color.fromARGB(255, 204, 214, 246),
+                    fontSize: 40,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ),
 
+              GridView.count(
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(), // to disable GridView's scrolling
+                crossAxisCount: 3,
+                crossAxisSpacing: 30, // Space between columns
+                mainAxisSpacing: 30, // Space between rows
+                padding: const EdgeInsets.symmetric(horizontal: 250), // Uniform padding on the sides
+                childAspectRatio: (800 / 800),
+                children: List.generate(projects.length, (index) {
+                  return CustomCard(
+                    title: projects[index].title,
+                    description: projects[index].description,
+                    imagePath: projects[index].imagePath,
+                    technologies: projects[index].technologies,
+                    projectUrl: projects[index].projectUrl,
+                  );
+                }),
+              ),
               // Add more CustomCard widgets as needed
               const SizedBox(height: 50),
               const Row(
