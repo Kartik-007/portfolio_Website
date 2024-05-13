@@ -13,6 +13,7 @@ dependencies:
   url_launcher: ^6.0.12
   lottie: ^1.2.1
   cupertino_icons: ^1.0.6
+  font_awesome_flutter: ^10.1.0
 
 dev_dependencies:
   flutter_test:
@@ -36,3 +37,4 @@ flutter:
     - assets/images/habit_tracker.png
     - assets/images/test_gen.png
     - assets/images/ai_chatbot.png
+    - assets/images/tubeai.png

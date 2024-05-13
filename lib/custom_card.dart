@@ -169,6 +169,7 @@ class CustomCard extends StatelessWidget {
         Text(
           technologies[i],
           style: TextStyle(
+            fontSize: 12,
             color: Color.fromARGB(255, 96, 242, 212),
             fontWeight: FontWeight.w200,
           ),
@@ -194,8 +195,8 @@ class CustomCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(30.0),
         ),
         child: Container(
-          height: 600,
-          width: 600,
+          height: 1000,
+          width: 1000,
           decoration: BoxDecoration(
             image: DecorationImage(
               opacity: 0.75,

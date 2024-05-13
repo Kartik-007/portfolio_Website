@@ -6,6 +6,8 @@ import 'package:lottie/lottie.dart';
 import 'blink.dart';
 import 'type_writer.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 
 void main() {
   runApp(PortfolioApp());
@@ -15,18 +17,27 @@ List<CustomCard> projects = [
   const CustomCard(
     title: 'Reacto',
     description:
-        "A mobile game designed to test and improve players' reaction times.",
+        "A mobile game designed to test and improve players' reaction times. 500+ downloads!",
     imagePath: "assets/images/reacto.png",
     technologies: ["Flutter", "Google Admob"],
     projectUrl: 'https://reacto.site/',
   ),
   const CustomCard(
-    title: 'Fitness Ai',
+    title: 'tubeAI',
     description:
-        "A fitness app utilizing Chat GPT 4 to curate workout and meal plans based on user inputs.",
-    imagePath: "assets/images/fitness.png",
-    technologies: ["OpenAi", "Flutter", "Firebase"],
-    projectUrl: '',
+        "An AI agent video ideation accelerator tool",
+    imagePath: "assets/images/tubeai.png",
+    technologies: ["React", "CrewAI", "FastAPI"],
+    projectUrl: 'https://github.com/Kartik-007/tubeAI',
+  ),
+
+  const CustomCard(
+    title: 'chatPDF',
+    description:
+        "The project enables a conversational interface for document interaction.",
+    imagePath: "assets/images/pdf.png",
+    technologies: ["Langchain", "OpenAi", "Streamlit"],
+    projectUrl: 'https://github.com/Kartik-007/chatPDF',
   ),
 
   const CustomCard(
@@ -38,36 +49,14 @@ List<CustomCard> projects = [
     projectUrl: '',
   ),
 
-  const CustomCard(
-    title: 'PDF Ai',
-    description:
-        "The project aims y multiple PDF documents simultaneously, enabling a conversational interface for document interaction.",
-    imagePath: "assets/images/pdf.png",
-    technologies: ["OpenAi", "Flutter", "Pinecone"],
-    projectUrl: 'https://github.com/Aman-Kothari7/pdf_AI_Flutter_Langchain',
-  ),
 
   const CustomCard(
-    title: 'RAG system-FastAPI',
+    title: 'replyLLM',
     description:
-        "Uses PI to create a responsive and informative query system.",
+        "A finetuned LLM specializing in responding to comments",
     imagePath: "assets/images/rbi.png",
     technologies: ["OpenAi", "Fast API", "Python"],
-    projectUrl: 'https://github.com/Aman-Kothari7/RAGsystem-FastAPI',
-  ),
-
-  const CustomCard(
-    title: 'Learning Path Ai',
-    description:
-        "Harnesses LLMs to curate personal learning paths on a particular topic according to user preferences and goals",
-    imagePath: "assets/images/learn.png",
-    technologies: [
-      "OpenAi",
-      "Flutter",
-      "Firebase",
-    ],
-    projectUrl:
-        'https://github.com/Aman-Kothari7/learning_path_ai_applied_LLM_Application',
+    projectUrl: 'https://github.com/Kartik-007/replyLLM',
   ),
 
   // Add more projects as needed
@@ -89,21 +78,20 @@ class PortfolioApp extends StatelessWidget {
               icon:
                   Icon(Icons.email, color: Color.fromARGB(255, 204, 214, 246)),
               onPressed: () {
-                launchUrl(Uri.parse('mailto:your-email@example.com'));
+                launchUrl(Uri.parse('kartik.mehra919@gmail.com'));
               },
             ),
             IconButton(
-              icon: Icon(Icons.account_circle,
-                  color: Color.fromARGB(255, 204, 214, 246)),
+              icon: Icon(FontAwesomeIcons.linkedinIn, color: Color.fromARGB(255, 204, 214, 246),),
               onPressed: () {
                 launchUrl(
-                    Uri.parse('https://www.linkedin.com/in/your-linkedin/'));
+                    Uri.parse('https://www.linkedin.com/in/kartik-mehra-464108224/'));
               },
             ),
             IconButton(
-              icon: Icon(Icons.code, color: Color.fromARGB(255, 204, 214, 246)),
+              icon: Icon(FontAwesomeIcons.github, color: Color.fromARGB(255, 204, 214, 246)),
               onPressed: () {
-                launchUrl(Uri.parse('https://github.com/your-github/'));
+                launchUrl(Uri.parse('https://github.com/Kartik-007'));
               },
             ),
           ],
@@ -172,7 +160,7 @@ class PortfolioApp extends StatelessWidget {
                 crossAxisSpacing: 30, // Space between columns
                 mainAxisSpacing: 30, // Space between rows
                 padding: const EdgeInsets.symmetric(horizontal: 250), // Uniform padding on the sides
-                childAspectRatio: (800 / 800),
+                childAspectRatio: (1500 / 1500),
                 children: List.generate(projects.length, (index) {
                   return CustomCard(
                     title: projects[index].title,
@@ -185,20 +173,6 @@ class PortfolioApp extends StatelessWidget {
               ),
               // Add more CustomCard widgets as needed
               const SizedBox(height: 50),
-              const Row(
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  Icon(Icons.email, color: Colors.white),
-                  SizedBox(
-                      width:
-                          10), // Provides space between the icon and the text
-                  Text(
-                    "amankothari917@gmail.com",
-                    style: TextStyle(
-                        color: Color.fromARGB(255, 96, 242, 212), fontSize: 20),
-                  ),
-                ],
-              ),
               const SizedBox(height: 50),
             ],
           ),
