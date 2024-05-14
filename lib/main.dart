@@ -25,7 +25,7 @@ List<CustomCard> projects = [
   const CustomCard(
     title: 'tubeAI',
     description:
-        "An AI agent video ideation accelerator tool",
+        "An AI agent video ideation accelerator tool.",
     imagePath: "assets/images/tubeai.png",
     technologies: ["React", "CrewAI", "FastAPI"],
     projectUrl: 'https://github.com/Kartik-007/tubeAI',
@@ -43,7 +43,7 @@ List<CustomCard> projects = [
   const CustomCard(
     title: 'Fitness Ai',
     description:
-        "A fitness app utilizing Chat GPT 4 puts. Featuring a firebase login, it adapts according to user progress",
+        "A fitness app utilizing Chat GPT 4 puts. Featuring a firebase login, it adapts according to user progress.",
     imagePath: "assets/images/fitness.png",
     technologies: ["OpenAi", "Flutter", "Firebase"],
     projectUrl: '',
@@ -53,7 +53,7 @@ List<CustomCard> projects = [
   const CustomCard(
     title: 'replyLLM',
     description:
-        "A finetuned LLM specializing in responding to comments",
+        "A finetuned LLM specializing in responding to comments.",
     imagePath: "assets/images/rbi.png",
     technologies: ["OpenAi", "Fast API", "Python"],
     projectUrl: 'https://github.com/Kartik-007/replyLLM',
